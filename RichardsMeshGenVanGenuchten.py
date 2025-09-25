@@ -386,8 +386,11 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     ("(x,y)", "($x, $y)"),
     ])
 
-    p1 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p1 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #        title="Mouse over the dots")
+    p1 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
            title="Mouse over the dots")
+    p1.add_tools(hover)
     
     p1.scatter(thetaS, eta[0:np.size(eta)-1], color="blue", line_width=lineWidth)
     p1.xaxis.axis_label = ' water content at saturation [-]'
@@ -399,8 +402,12 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     p1.title.text_font_size = str(titleSize) + "px"
     tab1 = Panel(child=p1, title="Theta_s")
 
-    p2 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p2 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #         title="Mouse over the dots")
+    p2 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
             title="Mouse over the dots")
+    p2.add_tools(hover)
+
     p2.scatter(thetaR, eta[0:np.size(eta)-1],line_width=lineWidth, color="red")
     p2.xaxis.axis_label = 'residual water content [-]'
     p2.xaxis.axis_label_text_font_size = str(labelSize) + "px"
@@ -411,8 +418,12 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     p2.title.text_font_size = str(titleSize) + "px"
     tab2 = Panel(child=p2, title="Theta_r")
 
-    p3 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p3 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #         title="Mouse over the dots" )
+    p3 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
             title="Mouse over the dots" )
+    p3.add_tools(hover)
+
     p3.scatter(Ks, eta[0:np.size(eta)-1],line_width=lineWidth, color="red")
     p3.xaxis.axis_label = 'Ks [m/s]'
     p3.xaxis.axis_label_text_font_size = str(labelSize) + "px"
@@ -423,8 +434,12 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     p3.title.text_font_size = str(titleSize) + "px"
     tab3= Panel(child=p3, title="Ks")
 
-    p4 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p4 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #         title="Mouse over the dots" )
+    p4 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
             title="Mouse over the dots" )
+    p4.add_tools(hover)
+
     p4.scatter(n, eta[0:np.size(eta)-1],line_width=lineWidth, color="red")
     p4.xaxis.axis_label = 'n [-] '
     p4.xaxis.axis_label_text_font_size = str(labelSize) + "px"
@@ -435,8 +450,12 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     p4.title.text_font_size = str(titleSize) + "px"
     tab4= Panel(child=p4, title="n")
 
-    p5 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p5 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #         title="Mouse over the dots" )
+    p5 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
             title="Mouse over the dots" )
+    p5.add_tools(hover)
+
     p5.scatter(alpha, eta[0:np.size(eta)-1],line_width=lineWidth, color="red")
     p5.xaxis.axis_label = '\u03B1 [m] '
     p5.xaxis.axis_label_text_font_size = str(labelSize) + "px"
@@ -447,8 +466,12 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     p5.title.text_font_size = str(titleSize) + "px"
     tab5= Panel(child=p5, title="\u03B1")
     
-    p6 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p6 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #         title="Mouse over the dots" )
+    p6 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
             title="Mouse over the dots" )
+    p6.add_tools(hover)
+
     p6.scatter(psiStar, eta[0:np.size(eta)-1],line_width=lineWidth, color="red")
     p6.xaxis.axis_label = '\u03C8* [m] '
     p6.xaxis.axis_label_text_font_size = str(labelSize) + "px"
@@ -459,8 +482,12 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     p6.title.text_font_size = str(titleSize) + "px"
     tab6= Panel(child=p6, title="\u03C8*")
 
-    p7 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p7 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #         title="Mouse over the dots" )
+    p7 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
             title="Mouse over the dots" )
+    p7.add_tools(hover)
+
     p7.scatter(alphaSpecificStorage, eta[0:np.size(eta)-1],line_width=lineWidth, color="red")
     p7.xaxis.axis_label = '\u03b1SS [1/Pa]'
     p7.xaxis.axis_label_text_font_size = str(labelSize) + "px"
@@ -471,8 +498,12 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     p7.title.text_font_size = str(titleSize) + "px"
     tab7= Panel(child=p7, title="\u03b1SpecStor")
 
-    p8 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p8 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #         title="Mouse over the dots" )
+    p8 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
             title="Mouse over the dots" )
+    p8.add_tools(hover)
+
     p8.scatter(betaSpecificStorage, eta[0:np.size(eta)-1],line_width=lineWidth, color="red")
     p8.xaxis.axis_label = '\u03b2SS [1/Pa]'
     p8.xaxis.axis_label_text_font_size = str(labelSize) + "px"
@@ -483,8 +514,12 @@ def showParameters(thetaS,thetaR,Ks,alphaSpecificStorage,betaSpecificStorage, n,
     p8.title.text_font_size = str(titleSize) + "px"
     tab8= Panel(child=p8, title="\u03b2SpecStor")
 
-    p9 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    # p9 = figure(plot_width=600, plot_height=600,tools=['pan,wheel_zoom,box_zoom,reset',hover],
+    #         title="Mouse over the dots" )
+    p9 = figure(width=600, height=600,tools=['pan,wheel_zoom,box_zoom,reset'],
             title="Mouse over the dots" )
+    p9.add_tools(hover)
+
     p9.scatter(et, eta,line_width=lineWidth, color="red")
     p9.xaxis.axis_label = 'et coeff. [1/s]'
     p9.xaxis.axis_label_text_font_size = str(labelSize) + "px"
